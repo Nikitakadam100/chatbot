@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#11142b">
+  <meta name="description" content="A student-friendly college information chatbot built as a JavaScript OOP project.">
+  <title>Campus Buddy — Smart Student Chatbot</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="Campus Buddy home">
+      <span class="brand-mark" aria-hidden="true">✦</span>
+      <span>campus<span class="brand-light">buddy</span></span>
+    </a>
+    <nav class="main-nav" aria-label="Main navigation">
+      <a href="#features">Features</a>
+      <a href="#how-it-works">How it works</a>
+    </nav>
+    <a class="header-cta" href="#chat">Open chatbot <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main>
+    <section class="hero section-wrap" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="status-dot"></span> YOUR CAMPUS, ONE CHAT AWAY</div>
+        <h1>College life,<br>made <span class="gradient-text">simpler.</span></h1>
+        <p class="hero-description">Meet Campus Buddy — your friendly guide to college information. Ask about admissions, fees, classes, exams and more, all in one place.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#chat">Start chatting <span aria-hidden="true">→</span></a>
+          <a class="text-link" href="#features">Explore features <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-note">
+          <span class="avatar-stack" aria-hidden="true"><span>🎓</span><span>💬</span><span>📚</span></span>
+          <span>Quick answers for your campus questions</span>
+        </div>
+      </div>
+      <div class="hero-art" aria-label="Illustration of a friendly student chatbot">
+        <div class="orbit orbit-one"></div>
+        <div class="orbit orbit-two"></div>
+        <span class="float-icon float-book" aria-hidden="true">📚</span>
+        <span class="float-icon float-spark" aria-hidden="true">✦</span>
+        <span class="float-icon float-cap" aria-hidden="true">🎓</span>
+        <div class="bot-card">
+          <div class="bot-face">
+            <div class="bot-antenna"><i></i></div>
+            <div class="bot-eyes"><i></i><i></i></div>
+            <div class="bot-smile"></div>
+            <div class="bot-cheek cheek-left"></div>
+            <div class="bot-cheek cheek-right"></div>
+          </div>
+          <div class="bot-card-caption"><span class="online-dot"></span> Buddy is ready to help</div>
+        </div>
+        <div class="hero-orb"></div>
+      </div>
+    </section>
+
+    <section class="feature-strip section-wrap" id="features" aria-label="Chatbot features">
+      <article class="feature-item">
+        <span class="feature-icon purple-icon" aria-hidden="true">✧</span>
+        <div><h2>Instant answers</h2><p>Find common college info in seconds.</p></div>
+      </article>
+      <article class="feature-item">
+        <span class="feature-icon blue-icon" aria-hidden="true">⌁</span>
+        <div><h2>Easy to use</h2><p>Just type a question or tap a suggestion.</p></div>
+      </article>
+      <article class="feature-item">
+        <span class="feature-icon pink-icon" aria-hidden="true">♡</span>
+        <div><h2>Student focused</h2><p>Helpful topics for everyday campus life.</p></div>
+      </article>
+    </section>
+
+    <section class="chat-section section-wrap" id="chat">
+      <div class="section-heading">
+        <div>
+          <div class="eyebrow">LET'S FIGURE IT OUT</div>
+          <h2>Your campus <span class="gradient-text">companion.</span></h2>
+        </div>
+        <p>Pick a question to get started, or ask Buddy in your own words.</p>
+      </div>
+
+      <div class="chat-layout">
+        <aside class="chat-sidebar">
+          <div class="sidebar-card">
+            <div class="sidebar-illustration" aria-hidden="true">🎓</div>
+            <h3>Here for your<br>college questions.</h3>
+            <p>Buddy has ready-to-go information about campus essentials. No question is too small.</p>
+            <div class="sidebar-divider"></div>
+            <div class="sidebar-status"><span class="online-dot"></span> Online · Ready to chat</div>
+          </div>
+          <div class="help-tip"><span aria-hidden="true">💡</span><p><strong>Tip:</strong> Try “What subjects do I have?” or “How do I contact the college?”</p></div>
+        </aside>
+
+        <section class="chat-window" aria-label="Campus Buddy chat">
+          <div class="chat-topbar">
+            <div class="chat-person">
+              <div class="mini-bot" aria-hidden="true"><span></span></div>
+              <div><h3>Campus Buddy</h3><span><i class="online-dot"></i> Your friendly campus guide</span></div>
+            </div>
+            <div class="topbar-actions">
+              <button class="export-button" id="export-chat" type="button" aria-label="Download conversation">↓ <span>Save chat</span></button>
+              <button class="clear-button" id="clear-chat" type="button" aria-label="Clear chat">↻ <span>New chat</span></button>
+            </div>
+          </div>
+          <div class="chat-tools">
+            <span class="history-status" id="history-status"><span aria-hidden="true">◉</span> Saved on this device</span>
+            <span class="message-count" id="message-count">0 messages</span>
+          </div>
+          <div class="messages" id="messages" aria-live="polite" aria-relevant="additions text">
+            <div class="message-row bot-row">
+              <div class="message-avatar" aria-hidden="true">✦</div>
+              <div class="message-content">
+                <div class="message-bubble">Hi there! 👋 I’m Campus Buddy. I can help with admissions, fees, subjects, timetable, exams, assignments, attendance, teachers and contact info. What would you like to know?</div>
+                <time class="message-time">Just now</time>
+              </div>
+            </div>
+          </div>
+          <div class="suggestions" aria-label="Suggested questions">
+            <button type="button" class="suggestion-chip">🎓 Admissions</button>
+            <button type="button" class="suggestion-chip">💳 Fees & scholarships</button>
+            <button type="button" class="suggestion-chip">📚 Subjects</button>
+            <button type="button" class="suggestion-chip">🗓️ Timetable</button>
+            <button type="button" class="suggestion-chip">📝 Exams</button>
+            <button type="button" class="suggestion-chip">📋 Assignments</button>
+            <button type="button" class="suggestion-chip">✅ Attendance</button>
+            <button type="button" class="suggestion-chip">👩‍🏫 Teachers</button>
+            <button type="button" class="suggestion-chip">📞 Contact</button>
+          </div>
+          <form class="chat-form" id="chat-form">
+            <label class="sr-only" for="message-input">Type your question</label>
+            <input id="message-input" name="message" type="text" placeholder="Ask me anything about college..." autocomplete="off" maxlength="500" required>
+            <button class="voice-button" id="voice-input" type="button" aria-label="Use voice input" title="Use voice input">🎙</button>
+            <button class="send-button" type="submit" aria-label="Send message"><span>Send</span><span aria-hidden="true">↑</span></button>
+          </form>
+          <p class="chat-disclaimer" id="chat-disclaimer">Predefined answers · Chat history stays in this browser · Verify official details with your college.</p>
+        </section>
+      </div>
+    </section>
+
+    <section class="qr-section section-wrap" id="how-it-works">
+      <div class="qr-copy">
+        <div class="eyebrow">TAKE BUDDY WITH YOU</div>
+        <h2>One scan.<br><span class="gradient-text">More campus clarity.</span></h2>
+        <p>Scan the QR code with your phone camera to open the chatbot website. When this project is deployed, the code automatically uses its current website address.</p>
+        <div class="qr-url-label"><span class="link-icon" aria-hidden="true">↗</span><span id="site-url">Preparing website link...</span></div>
+      </div>
+      <div class="qr-card">
+        <div class="qr-card-heading">SCAN TO CHAT <span aria-hidden="true">✦</span></div>
+        <div class="qr-code-frame"><div id="qrcode" aria-label="QR code for this website"></div></div>
+        <p id="qr-status">Point your camera here to visit Campus Buddy.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <a class="brand footer-brand" href="#home"><span class="brand-mark" aria-hidden="true">✦</span><span>campus<span class="brand-light">buddy</span></span></a>
+    <p>A student OOP project · Built with curiosity and JavaScript</p>
+    <a href="#home">Back to top ↑</a>
+  </footer>
+</body>
+</html>
